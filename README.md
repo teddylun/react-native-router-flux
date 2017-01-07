@@ -1,6 +1,6 @@
 # react-native-router-flux
 
-#Included packages:
+## Included packages
 - "react": "15.4.1",
 - "react-native": "0.40.0",
 - "react-native-router-flux": "^3.37.0",
