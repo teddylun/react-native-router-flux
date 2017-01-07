@@ -7,22 +7,22 @@ import {
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 
-const Home = () => {
+const Search = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>
-        Home
+        Search
       </Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#bb0000',
+    backgroundColor: '#ffcb05',
   },
   welcome: {
     fontSize: 20,
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default connect(({routes}) => ({routes}))(Home)
+export default connect(({routes}) => ({routes}))(Search)
