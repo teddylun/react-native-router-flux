@@ -12,8 +12,8 @@ const RouterWithRedux = connect()(Router);
 import Landing from './components/landing';
 import PageOne from './components/pageOne';
 import PageTwo from './components/pageTwo';
-import Home from './components/Home';
-import Search from './components/Search';
+import Home from './components/home';
+import Search from './components/search';
 
 const TabIcon = ({ selected, title}) => {
     return (
