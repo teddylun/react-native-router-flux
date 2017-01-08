@@ -10,10 +10,11 @@ const store = configureStore()
 const RouterWithRedux = connect()(Router);
 
 import Landing from './components/landing';
-import PageOne from './components/pageOne';
 import PageTwo from './components/pageTwo';
 import Home from './components/home';
 import Search from './components/search';
+import Login from './components/login';
+import Detail from './components/detail';
 
 const TabIcon = ({ selected, title}) => {
     return (
@@ -28,13 +29,18 @@ export default class App extends Component {
         <RouterWithRedux>
           <Scene key="root">
             <Scene key="landing" component={Landing} title="Landing" initial={true}/>
+            <Scene key="login" direction="vertical" component={Login} title="Login" hideNavBar />
             <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
+            <Scene key="detail" component={Detail} title="Detail" hideTabBar hideNavBar/>
             <Scene
               key="rootTabBar"
               tabs={true}
               tabBarStyle={{backgroundColor: '#ffffff'}}>
-              <Scene key="home" component={Home} title="Home" icon={TabIcon} initial />
-              <Scene key="search" component={Search} title="Search" icon={TabIcon} />
+              <Scene key="home" component={Home} title="Home" icon={TabIcon} hideNavBar/>
+              <Scene key="search" component={Search} title="Search" icon={TabIcon} hideNavBar/>
+
+
+
             </Scene>
           </Scene>
         </RouterWithRedux>

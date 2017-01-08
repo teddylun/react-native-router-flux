@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, PropTypes} from 'react';
 import {
   View,
   Text,
@@ -7,27 +7,30 @@ import {
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 
-class Search extends Component {
-
+class Detail extends Component {
+  static contextTypes = {
+    routes: PropTypes.object.isRequired,
+  };
   render() {
     const {routes} = this.context;
-    const goToDetail = () => Actions.detail({text: this.props.routes.scene.title});
-
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Search</Text>
-        <Text onPress={goToDetail}>Go to Detail with {this.props.routes.scene.title}</Text>
+        <Text style={styles.welcome}>Detail</Text>
+        <Text onPress={routes.pop}>
+          The params: {this.props.text}
+        </Text>
       </View>
     )
   }
 }
 
+
 const styles = StyleSheet.create({
-  container:{
-    flex: 1,
+  container: {
+    flex:1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffcb05',
+    backgroundColor: '#997F3D',
   },
   welcome: {
     fontSize: 20,
@@ -37,4 +40,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default connect(({routes}) => ({routes}))(Search)
+export default connect(({routes}) => ({routes}))(Detail)
