@@ -1,6 +1,7 @@
 # react-native-router-flux
 
-## Medium: https://medium.com/@teddylun/react-native-router-flux-with-redux-9966dd4041b6#.tojpdsw83
+## Medium:
+ https://medium.com/@teddylun/react-native-router-flux-with-redux-9966dd4041b6#.tojpdsw83
 
 ## Included packages
 - "react": "15.4.1",
