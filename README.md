@@ -1,7 +1,13 @@
 # react-native-router-flux
 
-## Medium:
+## Medium
  https://medium.com/@teddylun/react-native-router-flux-with-redux-9966dd4041b6#.tojpdsw83
+
+## Install dependencies
+  `npm install`
+  
+## Run on iOS simulator
+  `react-native run-ios`
 
 ## Included packages
 - "react": "15.4.1",
