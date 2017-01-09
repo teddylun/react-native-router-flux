@@ -38,9 +38,6 @@ export default class App extends Component {
               tabBarStyle={{backgroundColor: '#ffffff'}}>
               <Scene key="home" component={Home} title="Home" icon={TabIcon} hideNavBar/>
               <Scene key="search" component={Search} title="Search" icon={TabIcon} hideNavBar/>
-
-
-
             </Scene>
           </Scene>
         </RouterWithRedux>

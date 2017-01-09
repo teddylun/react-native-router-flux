@@ -37,4 +37,8 @@ const styles = StyleSheet.create({
   }
 })
 
-export default connect(({routes}) => ({routes}))(Landing);
+
+
+export default connect(state => ({
+  routes: state.routes
+}), null)(Landing);
