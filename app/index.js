@@ -9,12 +9,12 @@ import configureStore from './store/configureStore';
 const store = configureStore()
 const RouterWithRedux = connect()(Router);
 
-import Landing from './containers/landing';
-import PageTwo from './containers/pageTwo';
-import Home from './containers/home';
-import Search from './containers/search';
-import Login from './containers/login';
-import Detail from './containers/detail';
+import Landing from './components/Landing/landing';
+import PageTwo from './components/Items/pageTwo';
+import Home from './components/Home/home';
+import Search from './components/Search/search';
+import Login from './components/Login/login';
+import Detail from './components/Detail/detail';
 
 const TabIcon = ({ selected, title}) => {
     return (

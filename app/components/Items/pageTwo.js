@@ -1,7 +1,7 @@
 import React, { Component,PropTypes } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { itemFetchData } from '../actions/items';
+import { itemFetchData } from './actions';
 import { connect } from 'react-redux'
 
 class PageTwo extends Component {
