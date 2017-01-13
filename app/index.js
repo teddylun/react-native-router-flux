@@ -9,12 +9,12 @@ import configureStore from './store/configureStore';
 const store = configureStore()
 const RouterWithRedux = connect()(Router);
 
-import Landing from './components/landing';
-import PageTwo from './components/pageTwo';
-import Home from './components/home';
-import Search from './components/search';
-import Login from './components/login';
-import Detail from './components/detail';
+import Landing from './containers/landing';
+import PageTwo from './containers/pageTwo';
+import Home from './containers/home';
+import Search from './containers/search';
+import Login from './containers/login';
+import Detail from './containers/detail';
 
 const TabIcon = ({ selected, title}) => {
     return (
@@ -28,9 +28,9 @@ export default class App extends Component {
       <Provider store={store}>
         <RouterWithRedux>
           <Scene key="root">
-            <Scene key="landing" component={Landing} title="Landing" initial={true}/>
+            <Scene key="landing" component={Landing} title="Landing"/>
             <Scene key="login" direction="vertical" component={Login} title="Login" hideNavBar />
-            <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
+            <Scene key="pageTwo" component={PageTwo} title="PageTwo"  initial={true}/>
             <Scene key="detail" component={Detail} title="Detail" hideTabBar hideNavBar/>
             <Scene
               key="rootTabBar"
