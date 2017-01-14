@@ -1,20 +1,22 @@
+import * as types from '../../actionTypes';
+
 export function itemsHasErrored(bool) {
   return {
-    type: 'ITEMS_HAS_ERRORED',
+    type: types.ITEMS_HAS_ERRORED,
     errored: bool
   }
 }
 
 export function itemsIsLoading(bool) {
   return {
-    type: 'ITEMS_IS_LOADING',
+    type: types.ITEMS_IS_LOADING,
     isLoading: bool
   }
 }
 
 export function itemFetchDataSuccess(items) {
   return {
-    type: 'ITEMS_FETCH_DATA_SUCCESS',
+    type: types.ITEMS_FETCH_DATA_SUCCESS,
     items
   }
 }
@@ -36,14 +38,17 @@ export function itemFetchData(url) {
         if (!response.ok) {
           throw Error(response.statusText)
         }
-        dispatch(itemsIsLoading(false))
+
         return response
       })
       .then(response => response.json())
-      .then((items) => dispatch(itemFetchDataSuccess(items)))
+      .then((items) => {
+        dispatch(itemFetchDataSuccess(items))
+        dispatch(itemsIsLoading(false))
+      })
       .catch((err) => {
-        
         dispatch(itemsHasErrored(true))
+        dispatch(itemsIsLoading(false))
       })
   }
 }

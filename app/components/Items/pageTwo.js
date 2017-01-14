@@ -1,11 +1,10 @@
 import React, { Component,PropTypes } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { itemFetchData } from './actions';
+import {itemFetchData} from './actions';
 import { connect } from 'react-redux'
 
 class PageTwo extends Component {
-
   static contextTypes = {
     routes: PropTypes.object.isRequired,
   }
@@ -17,7 +16,7 @@ class PageTwo extends Component {
   render() {
     const {routes} = this.context;
     if (this.props.hasErrored) {
-      return <Text>Sorry. error loading items</Text>
+      return <Text style={styles.container}>Sorry. error loading items</Text>
     }
 
     if (this.props.isLoading) {
@@ -25,6 +24,7 @@ class PageTwo extends Component {
     }
 
     return (
+
       <View style={styles.container}>
         {this.props.items.map((item, index) =>(
           <Text key={index}>
@@ -39,10 +39,12 @@ class PageTwo extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 128,
+    margin: 70,
+    alignItems: 'center',
     flex: 1,
   }
 })
+
 PageTwo.propTypes = {
   fetchData: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired,
