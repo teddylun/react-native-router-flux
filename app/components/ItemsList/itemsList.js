@@ -4,7 +4,7 @@ import { Actions } from 'react-native-router-flux';
 import {itemFetchData} from './actions';
 import { connect } from 'react-redux'
 
-class PageTwo extends Component {
+class ItemsList extends Component {
   static contextTypes = {
     routes: PropTypes.object.isRequired,
   }
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   }
 })
 
-PageTwo.propTypes = {
+ItemsList.propTypes = {
   fetchData: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired,
   hasErrored: PropTypes.bool.isRequired,
@@ -66,4 +66,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageTwo)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsList)

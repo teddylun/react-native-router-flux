@@ -10,7 +10,7 @@ const store = configureStore()
 const RouterWithRedux = connect()(Router);
 
 import Landing from './components/Landing/landing';
-import PageTwo from './components/Items/pageTwo';
+import ItemsList from './components/ItemsList/itemsList';
 import Home from './components/Home/home';
 import Search from './components/Search/search';
 import Login from './components/Login/login';
@@ -30,7 +30,7 @@ export default class App extends Component {
           <Scene key="root">
             <Scene key="landing" component={Landing} title="Landing"/>
             <Scene key="login" direction="vertical" component={Login} title="Login" hideNavBar />
-            <Scene key="pageTwo" component={PageTwo} title="PageTwo"  initial={true}/>
+            <Scene key="itemsList" component={ItemsList} title="Items List"  initial={true}/>
             <Scene key="detail" component={Detail} title="Detail" hideTabBar hideNavBar/>
             <Scene
               key="rootTabBar"
