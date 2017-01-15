@@ -17,6 +17,7 @@ import {
 import{
   View,
   Text,
+  StyleSheet,
 } from 'react-native';
 
 const onSubmit = (values, dispatch) => {
@@ -38,37 +39,44 @@ class CleanForm extends Component {
   render() {
     const { handleSubmit, submitting} = this.props
     return (
-
-      <Form>
-        <FieldsContainer>
-          <Fieldset label="Contact details">
-            <Input name="first_name" label="First name" placeholder="Teddy" />
-            <Input name="last_name" label="Last name" placeholder="Lun" />
-            <Input name="email" label="Email" placeholder="something@domain.com"/>
-            <Input name="telephone" label="Phone" placeholder="+45 88 88 88 88" />
-          </Fieldset>
-          <Fieldset label="Shipping details" last>
-            <Input name="address" label="Address" placeholder="Hejrevej 33" />
-            <Input name="city" label="City" placeholder="Copenhagen" />
-            <Input name="zip" label="ZIP Code" placeholder="2400" />
-            <Select
-              name="country"
-              label="Country"
-              options={countryOptions}
-              placeholder="Denmark"
-            />
-            <Switch label="Save my details" border={false} name="save_details"/>
-          </Fieldset>
-        </FieldsContainer>
-        <ActionsContainer>
-          <Button icon="md-checkmark" iconPlacement="right"
-            onPress={handleSubmit(onSubmit)} submitting={submitting}>Save</Button>
-        </ActionsContainer>
-      </Form>
+      <View style={styles.container}>
+        <Form>
+          <FieldsContainer>
+            <Fieldset label="Contact details">
+              <Input name="first_name" label="First name" placeholder="John" />
+              <Input name="last_name" label="Last name" placeholder="Doe" />
+              <Input name="email" label="Email" placeholder="something@domain.com"/>
+              <Input name="telephone" label="Phone" placeholder="+45 88 88 88 88" />
+            </Fieldset>
+            <Fieldset label="Shipping details" last>
+              <Input name="address" label="Address" placeholder="Hejrevej 33" />
+              <Input name="city" label="City" placeholder="Copenhagen" />
+              <Input name="zip" label="ZIP Code" placeholder="2400" />
+              <Select
+                name="country"
+                label="Country"
+                options={countryOptions}
+                placeholder="Denmark"
+              />
+              <Switch label="Save my details" border={false} name="save_details"/>
+            </Fieldset>
+          </FieldsContainer>
+          <ActionsContainer>
+            <Button icon="md-checkmark" iconPlacement="right"
+              onPress={handleSubmit(onSubmit)} submitting={submitting}>Save</Button>
+          </ActionsContainer>
+        </Form>
+      </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 20,
+  }
+})
 
 export default reduxForm({
   form: 'Form',
