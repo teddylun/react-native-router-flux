@@ -1,14 +1,14 @@
 // reducers/index.js
 
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutablejs';
 import routes from './routes';
 import { items, itemsHasErrored, itemsIsLoading } from './items';
-import { reducer as formReducer } from 'redux-form';
+import { reducer as form } from 'redux-form/immutable';
 // ... other reducers
 
 export default combineReducers({
   routes,
-  form: formReducer,
+  form,
   items,
   itemsHasErrored,
   itemsIsLoading,

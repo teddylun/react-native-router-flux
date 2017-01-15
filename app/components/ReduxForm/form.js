@@ -6,10 +6,11 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form/immutable';
 
 const submit = values => {
-  console.log('submitting form', values)
+  // use toJS() to cast to plain object
+  console.log('submitting form', values.toJS())
 }
 
 const renderInput = ({ input: { onChange, ...restInput }}) => {
