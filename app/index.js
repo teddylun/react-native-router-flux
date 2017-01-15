@@ -15,6 +15,7 @@ import Home from './components/Home/home';
 import Search from './components/Search/search';
 import Login from './components/Login/login';
 import Detail from './components/Detail/detail';
+import Form from './components/ReduxForm/form';
 
 const TabIcon = ({ selected, title}) => {
     return (
@@ -30,8 +31,9 @@ export default class App extends Component {
           <Scene key="root">
             <Scene key="landing" component={Landing} title="Landing"/>
             <Scene key="login" direction="vertical" component={Login} title="Login" hideNavBar />
-            <Scene key="itemsList" component={ItemsList} title="Items List"  initial={true}/>
+            <Scene key="itemsList" component={ItemsList} title="Items List"/>
             <Scene key="detail" component={Detail} title="Detail" hideTabBar hideNavBar/>
+            <Scene key="form" component={Form} title="Redux Form" initial={true}/>
             <Scene
               key="rootTabBar"
               tabs={true}
